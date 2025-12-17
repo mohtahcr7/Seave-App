@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "165884140184",
+    "project_id": "seave-b6cdc",
+    "storage_bucket": "seave-b6cdc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165884140184:android:7f13e98711f79cb32c4eed",
+        "android_client_info": {
+          "package_name": "com.example.seave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4CYf6aY7KfWIe6mAxgO_ckoW-v6MUsgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
