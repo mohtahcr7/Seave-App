@@ -4,25 +4,23 @@ import 'package:seave/core/utils/app_color.dart';
 import 'package:seave/core/utils/app_text_styles.dart';
 import 'package:seave/core/widget/custom_bottums.dart';
 import 'package:seave/core/widget/custom_text_form_field.dart';
-import 'package:seave/featuer/auth/presentation/cubits/login_cubit/login_cubit.dart';
-import 'package:seave/featuer/auth/presentation/widget/create_acc_row.dart';
-import 'package:seave/featuer/auth/presentation/widget/social_login_bottom.dart';
+import 'package:seave/featuer/auth/presentation/cubits/create_user/create_user_cubit.dart';
 import 'package:seave/gen/assets.gen.dart';
 
-class BodyLoginView extends StatefulWidget {
-  const BodyLoginView({super.key});
+class BodyRegisterView extends StatefulWidget {
+  const BodyRegisterView({super.key});
 
   @override
-  State<BodyLoginView> createState() => _BodyLoginViewState();
+  State<BodyRegisterView> createState() => _BodyRegisterViewState();
 }
 
-class _BodyLoginViewState extends State<BodyLoginView> {
+class _BodyRegisterViewState extends State<BodyRegisterView> {
   final formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+
   @override
   Widget build(BuildContext context) {
-    late String email, password;
-
+    late String name, email, pass;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SingleChildScrollView(
@@ -52,13 +50,23 @@ class _BodyLoginViewState extends State<BodyLoginView> {
                   child: Column(
                     crossAxisAlignment: .end,
                     children: [
-                      Text("تسجيل الدخول", style: TextStyles.bold18),
+                      Text("انشاء حساب", style: TextStyles.bold18),
                       SizedBox(height: 18),
+                      CustomTextFormField(
+                        hint: 'اسم المستخدم',
+                        onSaved: (value) {
+                          name = value!;
+                        },
+
+                        textInputType: TextInputType.emailAddress,
+                      ),
+                      SizedBox(height: 20),
                       CustomTextFormField(
                         hint: 'البريد الالكتروني',
                         onSaved: (value) {
                           email = value!;
                         },
+
                         textInputType: TextInputType.emailAddress,
                       ),
                       SizedBox(height: 20),
@@ -66,45 +74,27 @@ class _BodyLoginViewState extends State<BodyLoginView> {
                         hint: 'كلمة المرور',
                         isObscureText: true,
                         onSaved: (value) {
-                          password = value!;
+                          pass = value!;
                         },
                       ),
                       SizedBox(height: 20),
-                      CreateAccRow(),
-                      SizedBox(height: 20),
+
                       CustomBottum(
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             formKey.currentState!.save();
-                            context.read<LoginCubit>().loginwithEmailAndPass(
+                            context.read<CreateUserCubit>().createUser(
                               email: email,
-                              pass: password,
+                              name: name,
+                              pass: pass,
                             );
                           } else {
                             autovalidateMode = AutovalidateMode.always;
                           }
                         },
-                        text: 'تسجيل الدخول',
+                        text: 'انشاء حساب',
                       ),
                       SizedBox(height: 20),
-                      Row(
-                        children: [
-                          Spacer(),
-                          SocialLoginBottom(
-                            image: $AssetsImageGen().googleIcon.path,
-                            onTap: context.read<LoginCubit>().loginWithGoogle,
-                          ),
-                          Spacer(),
-                          SocialLoginBottom(
-                            image: $AssetsImageGen().facebookIcon.path,
-                          ),
-                          Spacer(),
-                          SocialLoginBottom(
-                            image: $AssetsImageGen().applIcon.path,
-                          ),
-                          Spacer(),
-                        ],
-                      ),
                     ],
                   ),
                 ),

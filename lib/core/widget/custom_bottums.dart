@@ -12,7 +12,7 @@ class CustomBottum extends StatelessWidget {
       child: TextButton(
         style: TextButton.styleFrom(
           padding: EdgeInsets.symmetric(vertical: 19),
-          backgroundColor: AppColors.turquoise,
+          backgroundColor: AppColors.gold,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(16),
           ),

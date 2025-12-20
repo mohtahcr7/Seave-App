@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       locale: const Locale('ar'),
       onGenerateRoute: onGenetrateRoute,
-      initialRoute: LoginView.routName,
+      initialRoute: LoginView.routeName,
       home: LoginView(),
     );
   }
