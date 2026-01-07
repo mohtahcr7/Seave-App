@@ -17,8 +17,27 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsImageGen {
   const $AssetsImageGen();
 
+  /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (1).jpeg
+  AssetGenImage get whatsAppImage20251220At2157111 => const AssetGenImage(
+    'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (1).jpeg',
+  );
+
+  /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (2).jpeg
+  AssetGenImage get whatsAppImage20251220At2157112 => const AssetGenImage(
+    'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (2).jpeg',
+  );
+
+  /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (3).jpeg
+  AssetGenImage get whatsAppImage20251220At2157113 => const AssetGenImage(
+    'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (3).jpeg',
+  );
+
   /// File path: assets/image/appl_icon.svg
   SvgGenImage get applIcon => const SvgGenImage('assets/image/appl_icon.svg');
+
+  /// File path: assets/image/chaletTest.jpeg
+  AssetGenImage get chaletTest =>
+      const AssetGenImage('assets/image/chaletTest.jpeg');
 
   /// File path: assets/image/facebook_icon.svg
   SvgGenImage get facebookIcon =>
@@ -31,8 +50,22 @@ class $AssetsImageGen {
   /// File path: assets/image/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/image/logo.png');
 
+  /// File path: assets/image/seaveLogo.png
+  AssetGenImage get seaveLogo =>
+      const AssetGenImage('assets/image/seaveLogo.png');
+
   /// List of all assets
-  List<dynamic> get values => [applIcon, facebookIcon, googleIcon, logo];
+  List<dynamic> get values => [
+    whatsAppImage20251220At2157111,
+    whatsAppImage20251220At2157112,
+    whatsAppImage20251220At2157113,
+    applIcon,
+    chaletTest,
+    facebookIcon,
+    googleIcon,
+    logo,
+    seaveLogo,
+  ];
 }
 
 class Assets {
