@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:seave/featuer/auth/presentation/views/login_view.dart';
-import 'package:seave/featuer/auth/presentation/views/register_view.dart';
-import 'package:seave/featuer/home/presentation/view/home_view.dart';
+import 'package:seave/feature/auth/presentation/views/login_view.dart';
+import 'package:seave/feature/auth/presentation/views/register_view.dart';
+import 'package:seave/feature/home/presentation/view/home_view.dart';
 
 Route<dynamic> onGenetrateRoute(RouteSettings settings) {
   switch (settings.name) {

@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:seave/core/helper_functions/on_generate_routes.dart';
 import 'package:seave/core/services/get_it_service.dart';
 import 'package:seave/core/services/shared_preferences_single_ton.dart';
-import 'package:seave/featuer/auth/presentation/views/login_view.dart';
+import 'package:seave/feature/auth/presentation/views/login_view.dart';
 import 'package:seave/firebase_options.dart';
 import 'package:seave/generated/l10n.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Cairo'),
       debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
 
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       locale: const Locale('ar'),
       onGenerateRoute: onGenetrateRoute,
       initialRoute: LoginView.routeName,
-      home: LoginView(),
+      home: const LoginView(),
     );
   }
 }

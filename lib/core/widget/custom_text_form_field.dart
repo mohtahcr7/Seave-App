@@ -53,8 +53,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
         prefixIcon: widget.isObscureText == true
             ? IconButton(
                 icon: currentStat!
-                    ? Icon(Icons.visibility_off, color: const Color(0xffC9cecf))
-                    : Icon(Icons.visibility, color: const Color(0xffC9cecf)),
+                    ? const Icon(Icons.visibility_off, color: Color(0xffC9cecf))
+                    : const Icon(Icons.visibility, color: Color(0xffC9cecf)),
                 onPressed: () {
                   setState(() {
                     currentStat = !currentStat!;
@@ -62,7 +62,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 },
               )
             : null,
-        contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 20),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 20,
+        ),
         hintText: widget.hint,
         hintStyle: TextStyles.bold14.copyWith(
           color: const Color(0xff949D9E),
@@ -80,7 +83,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   OutlineInputBorder outlineInputBorder() {
     return OutlineInputBorder(
       borderRadius: BorderRadius.circular(16),
-      borderSide: BorderSide(color: const Color(0xffE6E9EA)),
+      borderSide: const BorderSide(color: Color(0xffE6E9EA)),
     );
   }
 }

@@ -18,7 +18,7 @@ class AppFeedback {
             decoration: BoxDecoration(
               color: Colors.green.withOpacity(0.85),
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 10,
@@ -28,20 +28,20 @@ class AppFeedback {
             ),
             child: Row(
               children: [
-                Icon(Icons.check_circle, color: Colors.white, size: 28),
-                Expanded(child: SizedBox()),
+                const Icon(Icons.check_circle, color: Colors.white, size: 28),
+                const Expanded(child: SizedBox()),
                 Expanded(
                   flex: 3,
                   child: Text(
                     msg,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                Expanded(child: SizedBox()),
+                const Expanded(child: SizedBox()),
               ],
             ),
           ),
@@ -51,7 +51,7 @@ class AppFeedback {
 
     Overlay.of(context).insert(overlayEntry);
 
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       overlayEntry.remove();
     });
   }
@@ -71,7 +71,7 @@ class AppFeedback {
             decoration: BoxDecoration(
               color: Colors.red.withOpacity(0.85),
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 10,
@@ -81,20 +81,20 @@ class AppFeedback {
             ),
             child: Row(
               children: [
-                Icon(Icons.error, color: Colors.white, size: 28),
-                Expanded(child: SizedBox()),
-                SizedBox(width: 12),
+                const Icon(Icons.error, color: Colors.white, size: 28),
+                const Expanded(child: SizedBox()),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Text(
                     msg,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                Expanded(child: SizedBox()),
+                const Expanded(child: SizedBox()),
               ],
             ),
           ),
@@ -104,7 +104,7 @@ class AppFeedback {
 
     Overlay.of(context).insert(overlayEntry);
 
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       overlayEntry.remove();
     });
   }

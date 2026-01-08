@@ -3,8 +3,8 @@ import 'package:get_it/get_it.dart';
 import 'package:seave/core/services/database_service.dart';
 import 'package:seave/core/services/firebase_auth_service.dart';
 import 'package:seave/core/services/firestore_service.dart';
-import 'package:seave/featuer/auth/domin/repos/auth_repo.dart';
-import 'package:seave/featuer/auth/domin/repos/auth_repo_impl.dart';
+import 'package:seave/feature/auth/domin/repos/auth_repo.dart';
+import 'package:seave/feature/auth/domin/repos/auth_repo_impl.dart';
 
 final getIt = GetIt.instance;
 

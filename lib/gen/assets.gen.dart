@@ -50,9 +50,17 @@ class $AssetsImageGen {
   /// File path: assets/image/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/image/logo.png');
 
+  /// File path: assets/image/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/image/notification.svg');
+
   /// File path: assets/image/seaveLogo.png
   AssetGenImage get seaveLogo =>
       const AssetGenImage('assets/image/seaveLogo.png');
+
+  /// File path: assets/image/seaveLogo0.svg
+  SvgGenImage get seaveLogo0 =>
+      const SvgGenImage('assets/image/seaveLogo0.svg');
 
   /// List of all assets
   List<dynamic> get values => [
@@ -64,7 +72,9 @@ class $AssetsImageGen {
     facebookIcon,
     googleIcon,
     logo,
+    notification,
     seaveLogo,
+    seaveLogo0,
   ];
 }
 
