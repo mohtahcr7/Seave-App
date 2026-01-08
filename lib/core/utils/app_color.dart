@@ -14,4 +14,5 @@ class AppColors {
   static const textBlack = Color(0xFF061013);
   static const goldenSun = Color(0xFFE0B973); // Golden Sun
   static const lightGrey = Color(0xFFD9D9D9); // Golden Sun
+  static const darkGrey = Color(0xFF6C6C6C); // Golden Sun
 }

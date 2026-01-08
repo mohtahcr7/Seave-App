@@ -62,6 +62,14 @@ class $AssetsImageGen {
   SvgGenImage get seaveLogo0 =>
       const SvgGenImage('assets/image/seaveLogo0.svg');
 
+  /// File path: assets/image/villagetest.png
+  AssetGenImage get villagetest =>
+      const AssetGenImage('assets/image/villagetest.png');
+
+  /// File path: assets/image/villagetest2.png
+  AssetGenImage get villagetest2 =>
+      const AssetGenImage('assets/image/villagetest2.png');
+
   /// List of all assets
   List<dynamic> get values => [
     whatsAppImage20251220At2157111,
@@ -75,6 +83,8 @@ class $AssetsImageGen {
     notification,
     seaveLogo,
     seaveLogo0,
+    villagetest,
+    villagetest2,
   ];
 }
 

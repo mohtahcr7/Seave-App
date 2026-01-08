@@ -1,71 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:seave/core/utils/app_color.dart';
-import 'package:seave/core/utils/app_text_styles.dart';
-import 'package:seave/gen/assets.gen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:seave/feature/home/presentation/widget/chalet_grid_view.dart';
+import 'package:seave/feature/home/presentation/widget/home_app_bar.dart';
+import 'package:seave/feature/home/presentation/widget/see_more_row.dart';
+import 'package:seave/feature/home/presentation/widget/village_list_view.dart';
 
 class BodyHomeView extends StatelessWidget {
   const BodyHomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          height: 140,
-          decoration: BoxDecoration(
-            color: AppColors.primary,
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: SafeArea(
-              child: Column(
-                mainAxisAlignment: .center,
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              const HomeAppBar(),
+              Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: .spaceBetween,
-                    // crossAxisAlignment: .center,
-                    children: [
-                      IconButton(
-                        padding: const EdgeInsets.only(right: 40),
-                        onPressed: () {},
-                        icon: SvgPicture.asset(
-                          const $AssetsImageGen().notification.path,
-                        ),
-                      ),
-
-                      SvgPicture.asset(
-                        const $AssetsImageGen().seaveLogo0.path,
-                        width: 140,
-                        colorFilter: const ColorFilter.mode(
-                          AppColors.background,
-                          BlendMode.srcIn,
-                        ),
-                        fit: .fill,
-                      ),
-
-                      Text(
-                        ' مرحبا بك في',
-                        style: TextStyles.medium14.copyWith(
-                          fontFamily: 'Tajawal',
-                          color: AppColors.lightGrey,
-                        ),
-                      ),
-                    ],
-                  ),
+                  const SeeMoreRow(title: 'اشهر القري'),
+                  SizedBox(height: 140.h, child: const VillageListView()),
+                  const SizedBox(height: 25),
+                  const SeeMoreRow(title: 'اقترحات من اجلك'),
                 ],
               ),
-            ),
+            ],
           ),
         ),
+
+        const ChaletGridView(),
       ],
     );
   }
 }
-
-
 
 
 
