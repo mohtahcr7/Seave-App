@@ -18,8 +18,8 @@ class _CustomFavIconState extends State<CustomFavIcon> {
         });
       },
       icon: isLoading
-          ? const Icon(Icons.favorite, color: Colors.red)
-          : const Icon(Icons.favorite_border),
+          ? const Icon(Icons.favorite, color: Colors.red, size: 30)
+          : const Icon(Icons.favorite_border, color: Colors.white, size: 30),
     );
   }
 }

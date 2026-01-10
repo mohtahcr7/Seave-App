@@ -39,8 +39,9 @@ class MyApp extends StatelessWidget {
         return Directionality(
           textDirection: TextDirection.rtl, // RTL
           child: MaterialApp(
+            // showPerformanceOverlay: true,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(fontFamily: 'Cairo'),
+            theme: ThemeData(fontFamily: 'Tajawal'),
             localizationsDelegates: const [
               S.delegate,
               GlobalMaterialLocalizations.delegate,

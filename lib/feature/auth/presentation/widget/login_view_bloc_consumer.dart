@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:seave/core/constant/constant.dart';
+import 'package:seave/core/services/shared_preferences_single_ton.dart';
 import 'package:seave/core/widget/app_feedback.dart';
 import 'package:seave/feature/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:seave/feature/auth/presentation/widget/body_login_view.dart';
@@ -11,18 +13,21 @@ class LoginViewBlocConsumer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (Prefs.getBool(kUserLoggedIn) == true) {
+        Navigator.pushReplacementNamed(context, HomeView.routeName);
+      }
+    });
+
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            AppFeedback.success('تم التسجيل بنجاح', context: context);
-            Navigator.pushReplacementNamed(context, HomeView.routeName);
-          });
+          AppFeedback.success('تم التسجيل بنجاح', context: context);
+          Navigator.pushReplacementNamed(context, HomeView.routeName);
         }
+
         if (state is LoginFailure) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            AppFeedback.error(state.errMessage, context: context);
-          });
+          AppFeedback.error(state.errMessage, context: context);
         }
       },
       builder: (context, state) {

@@ -1,0 +1,1 @@
+const String kUserLoggedIn = 'userLoggedIn';

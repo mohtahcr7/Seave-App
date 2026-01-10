@@ -17,20 +17,26 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsImageGen {
   const $AssetsImageGen();
 
-  /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (1).jpeg
-  AssetGenImage get whatsAppImage20251220At2157111 => const AssetGenImage(
-    'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (1).jpeg',
-  );
-
   /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (2).jpeg
   AssetGenImage get whatsAppImage20251220At2157112 => const AssetGenImage(
     'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (2).jpeg',
   );
 
-  /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (3).jpeg
-  AssetGenImage get whatsAppImage20251220At2157113 => const AssetGenImage(
-    'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (3).jpeg',
-  );
+  /// File path: assets/image/activExplor.svg
+  SvgGenImage get activExplor =>
+      const SvgGenImage('assets/image/activExplor.svg');
+
+  /// File path: assets/image/activeFavIcon.svg
+  SvgGenImage get activeFavIcon =>
+      const SvgGenImage('assets/image/activeFavIcon.svg');
+
+  /// File path: assets/image/activeHomeIcon.svg
+  SvgGenImage get activeHomeIcon =>
+      const SvgGenImage('assets/image/activeHomeIcon.svg');
+
+  /// File path: assets/image/activeProfilIcon.svg
+  SvgGenImage get activeProfilIcon =>
+      const SvgGenImage('assets/image/activeProfilIcon.svg');
 
   /// File path: assets/image/appl_icon.svg
   SvgGenImage get applIcon => const SvgGenImage('assets/image/appl_icon.svg');
@@ -39,13 +45,24 @@ class $AssetsImageGen {
   AssetGenImage get chaletTest =>
       const AssetGenImage('assets/image/chaletTest.jpeg');
 
+  /// File path: assets/image/explorIcon.svg
+  SvgGenImage get explorIcon =>
+      const SvgGenImage('assets/image/explorIcon.svg');
+
   /// File path: assets/image/facebook_icon.svg
   SvgGenImage get facebookIcon =>
       const SvgGenImage('assets/image/facebook_icon.svg');
 
+  /// File path: assets/image/favIconsvg.svg
+  SvgGenImage get favIconsvg =>
+      const SvgGenImage('assets/image/favIconsvg.svg');
+
   /// File path: assets/image/google_icon.svg
   SvgGenImage get googleIcon =>
       const SvgGenImage('assets/image/google_icon.svg');
+
+  /// File path: assets/image/homeIcon.svg
+  SvgGenImage get homeIcon => const SvgGenImage('assets/image/homeIcon.svg');
 
   /// File path: assets/image/logo.png
   AssetGenImage get logo => const AssetGenImage('assets/image/logo.png');
@@ -53,6 +70,25 @@ class $AssetsImageGen {
   /// File path: assets/image/notification.svg
   SvgGenImage get notification =>
       const SvgGenImage('assets/image/notification.svg');
+
+  /// File path: assets/image/ourChalettext.jpeg
+  AssetGenImage get ourChalettext =>
+      const AssetGenImage('assets/image/ourChalettext.jpeg');
+
+  /// File path: assets/image/ourChalettext1.jpeg
+  AssetGenImage get ourChalettext1 =>
+      const AssetGenImage('assets/image/ourChalettext1.jpeg');
+
+  /// File path: assets/image/ourChalettext2.jpeg
+  AssetGenImage get ourChalettext2 =>
+      const AssetGenImage('assets/image/ourChalettext2.jpeg');
+
+  /// File path: assets/image/ourChalettext3.jpeg
+  AssetGenImage get ourChalettext3 =>
+      const AssetGenImage('assets/image/ourChalettext3.jpeg');
+
+  /// File path: assets/image/profilsvg.svg
+  SvgGenImage get profilsvg => const SvgGenImage('assets/image/profilsvg.svg');
 
   /// File path: assets/image/seaveLogo.png
   AssetGenImage get seaveLogo =>
@@ -72,15 +108,25 @@ class $AssetsImageGen {
 
   /// List of all assets
   List<dynamic> get values => [
-    whatsAppImage20251220At2157111,
     whatsAppImage20251220At2157112,
-    whatsAppImage20251220At2157113,
+    activExplor,
+    activeFavIcon,
+    activeHomeIcon,
+    activeProfilIcon,
     applIcon,
     chaletTest,
+    explorIcon,
     facebookIcon,
+    favIconsvg,
     googleIcon,
+    homeIcon,
     logo,
     notification,
+    ourChalettext,
+    ourChalettext1,
+    ourChalettext2,
+    ourChalettext3,
+    profilsvg,
     seaveLogo,
     seaveLogo0,
     villagetest,

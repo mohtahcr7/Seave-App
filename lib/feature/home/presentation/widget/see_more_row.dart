@@ -3,8 +3,9 @@ import 'package:seave/core/utils/app_color.dart';
 import 'package:seave/core/utils/app_text_styles.dart';
 
 class SeeMoreRow extends StatelessWidget {
-  const SeeMoreRow({super.key, required this.title});
+  const SeeMoreRow({super.key, required this.title, this.onPressed});
   final String title;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +14,7 @@ class SeeMoreRow extends StatelessWidget {
         mainAxisAlignment: .spaceBetween,
         children: [
           TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(
               'رؤية المزيد',
               style: TextStyles.medium14.copyWith(

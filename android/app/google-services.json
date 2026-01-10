@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "165884140184-golhm2ta7mcsur8u4np0mv2kju6o12hd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.seave",
+            "certificate_hash": "b2c23c84e73abc347f5fdfcb9ddda49ff2fe501b"
+          }
+        },
+        {
           "client_id": "165884140184-5v9076nrjbhg8e1vr8ugnsk2u6jkprqn.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -85,6 +93,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "165884140184-i1qb40qq51co4a1glgcs6q7qnhuhlhen.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mohamed.seave",
+            "certificate_hash": "b2c23c84e73abc347f5fdfcb9ddda49ff2fe501b"
+          }
+        },
         {
           "client_id": "165884140184-5v9076nrjbhg8e1vr8ugnsk2u6jkprqn.apps.googleusercontent.com",
           "client_type": 3

@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:seave/core/constant/constant.dart';
 import 'package:seave/core/errors/custom_exptions.dart';
 import 'package:seave/core/errors/feilures.dart';
 import 'package:seave/core/services/firebase_auth_service.dart';
@@ -69,6 +70,7 @@ class AuthRepoImpl implements AuthRepo {
       );
       var userEntity = await getUserData(uId: user.uid);
       saveUserData(user: userEntity);
+      Prefs.setBool(kUserLoggedIn, true);
       return right(userEntity);
     } on CustomExceptions catch (e) {
       return left(ServerFailures(errMessage: e.message));

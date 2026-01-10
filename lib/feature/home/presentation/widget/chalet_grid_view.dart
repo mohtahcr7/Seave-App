@@ -10,7 +10,9 @@ class ChaletGridView extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       sliver: SliverGrid(
         delegate: SliverChildBuilderDelegate(
-          (context, index) => const ChaletCard(),
+          addAutomaticKeepAlives: false,
+          addRepaintBoundaries: true,
+          (context, index) => const RepaintBoundary(child: ChaletCard()),
           childCount: 10,
         ),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

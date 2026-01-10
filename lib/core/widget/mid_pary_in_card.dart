@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:seave/core/utils/app_color.dart';
 import 'package:seave/core/utils/app_text_styles.dart';
+import 'package:seave/core/widget/location_and_icon.dart';
 
 class MidPartInCard extends StatelessWidget {
   const MidPartInCard({super.key});
@@ -19,18 +21,7 @@ class MidPartInCard extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Text(
-          'السخنه',
-          style: TextStyles.regular12.copyWith(
-            color: AppColors.darkGrey,
-            fontFamily: 'Tajawal',
-          ),
-        ),
-        const Icon(
-          Icons.location_on_outlined,
-          size: 14,
-          color: AppColors.primary,
-        ),
+        LocationAndIcon(fontSize: 14.sp),
       ],
     );
   }

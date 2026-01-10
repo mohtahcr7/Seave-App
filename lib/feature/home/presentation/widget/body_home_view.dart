@@ -4,6 +4,7 @@ import 'package:seave/feature/home/presentation/widget/chalet_grid_view.dart';
 import 'package:seave/feature/home/presentation/widget/home_app_bar.dart';
 import 'package:seave/feature/home/presentation/widget/see_more_row.dart';
 import 'package:seave/feature/home/presentation/widget/village_list_view.dart';
+import 'package:seave/feature/village_list/presentation/views/village_list_screen.dart';
 
 class BodyHomeView extends StatelessWidget {
   const BodyHomeView({super.key});
@@ -12,19 +13,25 @@ class BodyHomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
+        const SliverToBoxAdapter(child: HomeAppBar()),
+
         SliverToBoxAdapter(
-          child: Column(
-            children: [
-              const HomeAppBar(),
-              Column(
-                children: [
-                  const SeeMoreRow(title: 'اشهر القري'),
-                  SizedBox(height: 140.h, child: const VillageListView()),
-                  const SizedBox(height: 25),
-                  const SeeMoreRow(title: 'اقترحات من اجلك'),
-                ],
-              ),
-            ],
+          child: SeeMoreRow(
+            title: 'اشهر القري',
+            onPressed: () {
+              Navigator.pushNamed(context, VillageListScreen.routeName);
+            },
+          ),
+        ),
+
+        SliverToBoxAdapter(
+          child: SizedBox(height: 120.h, child: const VillageListView()),
+        ),
+
+        const SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.only(bottom: 25),
+            child: SeeMoreRow(title: 'اقترحات من اجلك'),
           ),
         ),
 
