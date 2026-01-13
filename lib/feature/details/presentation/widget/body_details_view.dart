@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seave/core/constant/text_images.dart';
+import 'package:seave/core/constant/test_images.dart';
 import 'package:seave/core/utils/app_color.dart';
 import 'package:seave/core/utils/app_text_styles.dart';
 import 'package:seave/core/widget/custom_Sliver_app_bar_details_view.dart';

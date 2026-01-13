@@ -17,6 +17,14 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsImageGen {
   const $AssetsImageGen();
 
+  /// File path: assets/image/OB1Image.png
+  AssetGenImage get oB1Image =>
+      const AssetGenImage('assets/image/OB1Image.png');
+
+  /// File path: assets/image/OB2Image.png
+  AssetGenImage get oB2Image =>
+      const AssetGenImage('assets/image/OB2Image.png');
+
   /// File path: assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (2).jpeg
   AssetGenImage get whatsAppImage20251220At2157112 => const AssetGenImage(
     'assets/image/WhatsApp Image 2025-12-20 at 21.57.11 (2).jpeg',
@@ -108,6 +116,8 @@ class $AssetsImageGen {
 
   /// List of all assets
   List<dynamic> get values => [
+    oB1Image,
+    oB2Image,
     whatsAppImage20251220At2157112,
     activExplor,
     activeFavIcon,

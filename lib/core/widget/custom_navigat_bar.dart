@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:seave/core/models/bottom_navigation_bar_model.dart';
 import 'package:seave/core/widget/navigation_bar_item.dart';
 
-class CustomNavigatBar extends StatefulWidget {
-  const CustomNavigatBar({super.key});
+class CustomNavigatBar extends StatelessWidget {
+  const CustomNavigatBar({
+    super.key,
+    required this.currentIndex,
+    required this.onChanged,
+  });
 
-  @override
-  State<CustomNavigatBar> createState() => _CustomNavigatBarState();
-}
-
-class _CustomNavigatBarState extends State<CustomNavigatBar> {
-  int selectedIndex = 0;
+  final int currentIndex;
+  final ValueChanged<int> onChanged;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
       height: 70,
       decoration: const BoxDecoration(
         color: Colors.white,
@@ -42,14 +41,9 @@ class _CustomNavigatBarState extends State<CustomNavigatBar> {
               final item = entry.value;
 
               return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    selectedIndex = index;
-                  });
-                },
+                onTap: () => onChanged(index),
                 child: NavigatorBarItem(
-                  key: ValueKey('nav_item_$index'),
-                  isSelected: selectedIndex == index,
+                  isSelected: currentIndex == index,
                   bottomNavigationBarModel: item,
                 ),
               );
