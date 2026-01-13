@@ -6,16 +6,22 @@ import 'package:seave/core/widget/custom_Sliver_app_bar_details_view.dart';
 import 'package:seave/core/widget/custom_bottums.dart';
 import 'package:seave/core/widget/location_and_icon.dart';
 import 'package:seave/core/widget/positiv_and_nigative_buttom.dart';
-import 'package:seave/core/widget/text_and_icon.dart';
+import 'package:seave/feature/chalet_details/presentation/widget/chalet_info_row.dart';
+import 'package:seave/feature/chalet_details/presentation/widget/table_calnder.dart';
 
-class BodyDetailsView extends StatelessWidget {
-  const BodyDetailsView({super.key});
+class ChaletBodyDetailsView extends StatelessWidget {
+  ChaletBodyDetailsView({super.key});
+  final nightsNotifier = ValueNotifier<int>(0);
+  final totalNotifier = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
+    int numberOfNights = 0;
+    int totalPrice = 0;
+
     return CustomScrollView(
       slivers: [
-        CustomSliverAppBarDetailsView(imagesList: chaletImagesTest),
+        CustomSliverAppBarDetailsView(testImagesList: chaletImagesTest),
 
         const SliverToBoxAdapter(child: SizedBox(height: 20)),
 
@@ -25,7 +31,7 @@ class BodyDetailsView extends StatelessWidget {
             delegate: SliverChildListDelegate([
               const Align(
                 alignment: Alignment.centerRight,
-                child: Text('فندق بلومار', style: TextStyles.bold18),
+                child: Text('قرية بلومار', style: TextStyles.bold18),
               ),
               const SizedBox(height: 9),
               const Align(
@@ -34,7 +40,7 @@ class BodyDetailsView extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              const _InfoRows(),
+              const ChaletInfoRows(),
 
               const SizedBox(height: 20),
 
@@ -53,67 +59,32 @@ class BodyDetailsView extends StatelessWidget {
               const _PriceAndCounters(),
 
               const SizedBox(height: 20),
+              BookingCalendar(
+                pricePerNight: 800,
+                onBookingChanged: (nights, total) {
+                  nightsNotifier.value = nights;
+                  totalNotifier.value = total;
+                },
+              ),
+              ValueListenableBuilder(
+                valueListenable: nightsNotifier,
+                builder: (context, nights, _) {
+                  return Text('عدد الليالي: $nights');
+                },
+              ),
+
+              ValueListenableBuilder(
+                valueListenable: totalNotifier,
+                builder: (context, total, _) {
+                  return Text('المجموع: $total جنيه');
+                },
+              ),
+
+              const SizedBox(height: 20),
               CustomBottum(onPressed: () {}, text: 'ارسال طلب'),
               const SizedBox(height: 20),
             ]),
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class _InfoRows extends StatelessWidget {
-  const _InfoRows();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextAndIcon(
-              text: 'اول علوي',
-              icon: Icons.stairs_outlined,
-              fontSize: 16,
-            ),
-            TextAndIcon(
-              text: 'سرير',
-              icon: Icons.bed_rounded,
-              count: '2',
-              fontSize: 16,
-            ),
-            TextAndIcon(
-              text: 'غرفه',
-              icon: Icons.door_front_door_outlined,
-              count: '1',
-              fontSize: 16,
-            ),
-          ],
-        ),
-        SizedBox(height: 9),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextAndIcon(
-              text: 'حمام',
-              icon: Icons.bathtub_rounded,
-              fontSize: 16,
-            ),
-            TextAndIcon(
-              text: 'المساحه',
-              icon: Icons.apartment_outlined,
-              count: '160',
-              fontSize: 16,
-            ),
-            TextAndIcon(
-              text: 'د لي البحر',
-              icon: Icons.swap_calls_rounded,
-              count: '5',
-              fontSize: 16,
-            ),
-          ],
         ),
       ],
     );
@@ -145,3 +116,9 @@ class _PriceAndCounters extends StatelessWidget {
     );
   }
 }
+
+List<DateTime> _bookedDays = [
+  DateTime(2026, 1, 10),
+  DateTime(2026, 1, 11),
+  DateTime(2026, 1, 12),
+];

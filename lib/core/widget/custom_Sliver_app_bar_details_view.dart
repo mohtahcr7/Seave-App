@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:seave/core/widget/custom_fav_icon.dart';
-import 'package:seave/feature/details/presentation/widget/back_arrow.dart';
+import 'package:seave/feature/chalet_details/presentation/widget/back_arrow.dart';
 
 class CustomSliverAppBarDetailsView extends StatelessWidget {
-  const CustomSliverAppBarDetailsView({super.key, required this.imagesList});
-  final List<String> imagesList;
+  const CustomSliverAppBarDetailsView({
+    super.key,
+    required this.testImagesList,
+  });
+  final List<String> testImagesList;
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
@@ -13,7 +16,7 @@ class CustomSliverAppBarDetailsView extends StatelessWidget {
       backgroundColor: Colors.transparent,
       automaticallyImplyLeading: false,
       flexibleSpace: FlexibleSpaceBar(
-        background: _ChaletImagesPageView(imagesList: imagesList),
+        background: _ChaletImagesPageView(imagesList: testImagesList),
       ),
       actions: const [
         Padding(padding: EdgeInsets.only(right: 8), child: CustomFavIcon()),

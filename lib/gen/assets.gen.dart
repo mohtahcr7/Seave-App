@@ -49,6 +49,30 @@ class $AssetsImageGen {
   /// File path: assets/image/appl_icon.svg
   SvgGenImage get applIcon => const SvgGenImage('assets/image/appl_icon.svg');
 
+  /// File path: assets/image/blumar_test.jpg
+  AssetGenImage get blumarTest =>
+      const AssetGenImage('assets/image/blumar_test.jpg');
+
+  /// File path: assets/image/blumar_text1.jpg
+  AssetGenImage get blumarText1 =>
+      const AssetGenImage('assets/image/blumar_text1.jpg');
+
+  /// File path: assets/image/blumar_text2.jpg
+  AssetGenImage get blumarText2 =>
+      const AssetGenImage('assets/image/blumar_text2.jpg');
+
+  /// File path: assets/image/blumar_text4.jpg
+  AssetGenImage get blumarText4 =>
+      const AssetGenImage('assets/image/blumar_text4.jpg');
+
+  /// File path: assets/image/blumar_text5.jpg
+  AssetGenImage get blumarText5 =>
+      const AssetGenImage('assets/image/blumar_text5.jpg');
+
+  /// File path: assets/image/blumar_text6.jpg
+  AssetGenImage get blumarText6 =>
+      const AssetGenImage('assets/image/blumar_text6.jpg');
+
   /// File path: assets/image/chaletTest.jpeg
   AssetGenImage get chaletTest =>
       const AssetGenImage('assets/image/chaletTest.jpeg');
@@ -124,6 +148,12 @@ class $AssetsImageGen {
     activeHomeIcon,
     activeProfilIcon,
     applIcon,
+    blumarTest,
+    blumarText1,
+    blumarText2,
+    blumarText4,
+    blumarText5,
+    blumarText6,
     chaletTest,
     explorIcon,
     facebookIcon,

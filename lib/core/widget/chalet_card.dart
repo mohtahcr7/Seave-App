@@ -5,7 +5,7 @@ import 'package:seave/core/utils/app_text_styles.dart';
 import 'package:seave/core/widget/custom_fav_icon.dart';
 import 'package:seave/core/widget/mid_pary_in_card.dart';
 import 'package:seave/core/widget/text_and_icon.dart';
-import 'package:seave/feature/details/presentation/view/details_view.dart';
+import 'package:seave/feature/chalet_details/presentation/view/chalet_details_view.dart';
 import 'package:seave/gen/assets.gen.dart';
 
 class ChaletCard extends StatelessWidget {
@@ -99,7 +99,7 @@ class ChaletCard extends StatelessWidget {
                       backgroundColor: AppColors.primary,
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, DetailsView.routeName);
+                      Navigator.pushNamed(context, ChaletDetailsView.routeName);
                     },
                     child: Text(
                       'تفاصيل',

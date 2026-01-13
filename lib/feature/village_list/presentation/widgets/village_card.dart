@@ -4,6 +4,7 @@ import 'package:seave/core/utils/app_color.dart';
 import 'package:seave/core/utils/app_text_styles.dart';
 import 'package:seave/core/widget/custom_fav_icon.dart';
 import 'package:seave/core/widget/location_and_icon.dart';
+import 'package:seave/feature/village_detailes/presentation/view/village_details_view.dart';
 import 'package:seave/gen/assets.gen.dart';
 
 class VillageCardInSliverList extends StatelessWidget {
@@ -88,7 +89,10 @@ class VillageCardInSliverList extends StatelessWidget {
                           backgroundColor: AppColors.primary,
                         ),
                         onPressed: () {
-                          // Navigator.pushNamed(context, DetailsView.routeName);
+                          Navigator.pushNamed(
+                            context,
+                            VillageDetailsView.routeName,
+                          );
                         },
                         child: Text(
                           'تفاصيل',
