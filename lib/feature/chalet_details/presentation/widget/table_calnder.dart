@@ -63,7 +63,12 @@ class _BookingCalendarState extends State<BookingCalendar> {
       firstDay: DateTime.now(),
       lastDay: DateTime(2100),
       focusedDay: _focusedDay,
-
+      headerStyle: const HeaderStyle(
+        formatButtonVisible: false, // لو عايز تشيل زرار تغيير الشهر/الأسبوع
+        titleCentered: true,
+        leftChevronVisible: true,
+        rightChevronVisible: true,
+      ),
       enabledDayPredicate: (day) {
         // الأيام متاحة لو مش محجوزة ولها تاريخ بعد اليوم الحالي
         if (_isBooked(day)) return false;

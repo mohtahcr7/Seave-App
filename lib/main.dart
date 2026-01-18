@@ -2,9 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:seave/core/constant/constant.dart';
 import 'package:seave/core/helper_functions/on_generate_routes.dart';
 import 'package:seave/core/services/get_it_service.dart';
 import 'package:seave/core/services/shared_preferences_single_ton.dart';
+import 'package:seave/feature/home/presentation/view/main_layout.dart';
 import 'package:seave/feature/onBoarding/view/on_bording_view.dart';
 import 'package:seave/firebase_options.dart';
 import 'package:seave/generated/l10n.dart';
@@ -51,8 +53,9 @@ class MyApp extends StatelessWidget {
             supportedLocales: S.delegate.supportedLocales,
             locale: const Locale('ar'), // لضمان RTL
             onGenerateRoute: onGenetrateRoute,
-            initialRoute: OnBordingView.routName,
-            // حذف home لتفادي أي تعارض مع initialRoute
+            initialRoute: Prefs.getBool(kIsOnBoardingViewSeen) == true
+                ? MainLayout.routeName
+                : OnBordingView.routName,
           ),
         );
       },

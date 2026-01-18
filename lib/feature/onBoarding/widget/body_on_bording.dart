@@ -3,7 +3,7 @@ import 'package:seave/core/constant/constant.dart';
 import 'package:seave/core/services/shared_preferences_single_ton.dart';
 import 'package:seave/core/widget/custom_bottums.dart';
 import 'package:seave/feature/auth/presentation/views/login_view.dart';
-import 'package:seave/feature/home/presentation/view/home_view.dart';
+import 'package:seave/feature/home/presentation/view/main_layout.dart';
 import 'package:seave/feature/onBoarding/widget/custom_dots.dart';
 import 'package:seave/feature/onBoarding/widget/onBording_page_view.dart';
 
@@ -50,8 +50,8 @@ class _BodyOnBordingState extends State<BodyOnBording> {
             child: CustomBottum(
               onPressed: () {
                 Prefs.setBool(kIsOnBoardingViewSeen, true);
-                if (kUserLoggedIn == true) {
-                  Navigator.pushReplacementNamed(context, HomeView.routeName);
+                if (Prefs.getBool(kUserLoggedIn) == true) {
+                  Navigator.pushReplacementNamed(context, MainLayout.routeName);
                 } else {
                   Navigator.pushReplacementNamed(context, LoginView.routeName);
                 }
